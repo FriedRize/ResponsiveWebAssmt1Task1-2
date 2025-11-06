@@ -1,0 +1,364 @@
+:root { /* CSS variables */
+    --dark: #070410; /* Almost black background */
+    --navy: #231651; /* Deep purple-navy for cards */
+    --teal: #4dccbd; /* Bright teal accent */
+    --yellow: #eef36a; /* Defined but unused */
+    --white: #ffffff; /* White text */
+}
+
+* { /* Universal selector */
+    box-sizing: border-box; /* Include padding/border in size */
+}
+
+body { /* Body styles */
+    margin: 0; /* Remove default margin */
+    font-family: 'Lato', sans-serif; /* Set body font */
+    background-color: var(--dark); /* Background color */
+    color: var(--white); /* Text color */
+}
+
+/* --- Mobile Layout (Default - up to 719px, matches Image 2) --- */
+header { /* Header styles */
+    display: flex; /* Flexbox layout */
+    align-items: center; /* Vertically center items */
+    justify-content: space-between; /* Space items evenly */
+    padding: 16px; /* Header padding */
+    background-color: var(--navy); /* Header background */
+    flex-wrap: wrap; /* Allow items to wrap */
+    gap: 16px; /* Spacing between items */
+}
+
+header h1 { /* Header title */
+    font-family: 'Teko', sans-serif; /* Branding font */
+    font-size: 2em; /* Title font size */
+    margin: 0; /* Remove default margin */
+    color: var(--white); /* Title color */
+    order: 1; /* First item in flex order */
+}
+
+nav { /* Navigation styles */
+    display: flex; /* Flexbox layout */
+    gap: 16px; /* Spacing between links */
+    order: 3; /* Nav below search on mobile */
+    width: 100%; /* Full width on mobile */
+    flex-wrap: wrap; /* Allow links to wrap */
+    justify-content: center; /* Center nav items */
+}
+
+nav a { /* Nav link styles */
+    color: var(--white); /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.5em; /* Larger touch targets */
+}
+
+nav a:hover { /* Nav link hover */
+    color: var(--teal); /* Teal on hover */
+}
+
+.search-box { /* Search box container */
+    order: 2; /* Between title and nav */
+    flex-grow: 1; /* Take available space */
+    text-align: right; /* Align input right */
+}
+
+.search-box input { /* Search input field */
+    padding: 8px 16px; /* Input padding */
+    border-radius: 16px; /* Rounded corners */
+    border: none; /* No border */
+    font-size: 1em; /* Input text size */
+    background-color: var(--white); /* Input background */
+    width: 100%; /* Full width in container */
+    max-width: 150px; /* Max width for input */
+}
+
+main { /* Main content area */
+    max-width: 900px; /* Constrain width */
+    margin: 0 auto; /* Center content */
+    padding: 16px; /* Main padding */
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Stack sections vertically */
+    gap: 16px; /* Spacing between sections */
+}
+
+.movie-title { /* Movie title styles */
+    font-family: 'Teko', sans-serif; /* Display font */
+    font-size: 1.5em; /* Title font size */
+    color: var(--teal); /* Teal color */
+    margin: 0 0 8px 0; /* Bottom margin only */
+}
+
+.featured-movie { /* Featured movie section */
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Image top, info bottom */
+    gap: 16px; /* Spacing between items */
+    background-color: var(--navy); /* Card background */
+    border-radius: 16px; /* Rounded corners */
+    padding: 16px; /* Card padding */
+}
+
+.featured-movie img { /* Featured movie image */
+    width: 100%; /* Full width image */
+    border-radius: 16px; /* Rounded corners */
+}
+
+.featured-info { /* Featured movie info */
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Stack text/button */
+    justify-content: space-between; /* Space items */
+    align-items: flex-start; /* Align items left */
+    gap: 16px; /* Spacing between items */
+}
+
+.featured-info > div { /* Text content wrapper */
+    flex-grow: 1; /* Take available space */
+}
+
+.featured-info p { /* Featured info paragraphs */
+    font-size: 1em; /* Paragraph font size */
+    margin: 0; /* Remove default margin */
+    line-height: 1.5; /* Line height */
+}
+
+.watch-btn { /* "WATCH NOW" button */
+    background-color: var(--teal); /* Button background */
+    color: var(--dark); /* High contrast text */
+    font-family: 'Teko', sans-serif; /* CTA font */
+    font-size: 2em; /* Large button text */
+    padding: 16px; /* Button padding */
+    border-radius: 16px; /* Rounded corners */
+    text-align: center; /* Center text */
+    cursor: pointer; /* Clickable cursor */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Allow padding/width */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover */
+    font-weight: 700; /* Bold text */
+    flex-shrink: 0; /* Prevent shrinking */
+    width: 100%; /* Full width on phone */
+}
+
+.watch-btn:hover { /* Button hover state */
+    background-color: var(--dark); /* Invert colors on hover */
+    color: var(--teal); /* Invert colors on hover */
+}
+
+.movie-grid { /* Grid of movie cards */
+    display: grid; /* Grid layout */
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 16px; /* Spacing between cards */
+}
+
+.movie-card { /* Individual movie card */
+    background-color: var(--navy); /* Card background */
+    border-radius: 16px; /* Rounded corners */
+    overflow: hidden; /* Clip content */
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Stack content vertically */
+    padding: 16px; /* Card padding */
+    gap: 16px; /* Spacing inside card */
+}
+
+.movie-card img { /* Movie card image */
+    width: 100%; /* Full width image */
+    display: block; /* Remove extra space */
+    border-radius: 16px; /* Rounded corners */
+}
+
+.movie-card .movie-info { /* Movie card info */
+    font-size: 1em; /* Info text size */
+    flex: 1; /* Take remaining space */
+    line-height: 1.5; /* Line height */
+}
+
+.movie-horizontal { /* Horizontal movie card */
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Stack content vertically on mobile */
+    gap: 16px; /* Spacing between items */
+    background-color: var(--navy); /* Card background */
+    border-radius: 16px; /* Rounded corners */
+    padding: 16px; /* Card padding */
+}
+
+.movie-horizontal img { /* Horizontal movie image */
+    width: 100%; /* Full width image */
+    border-radius: 16px; /* Rounded corners */
+}
+
+.movie-horizontal .movie-info { /* Horizontal movie info */
+    font-size: 1em; /* Info text size */
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Stack content vertically */
+    gap: 16px; /* Spacing inside info */
+    line-height: 1.5; /* Line height */
+}
+
+.movie-horizontal .movie-info > div { /* Info text wrapper */
+    flex: 1; /* Push button to bottom */
+}
+
+.movie-horizontal .movie-info p { /* Horizontal info paragraphs */
+    margin: 0; /* Remove default margin */
+}
+
+
+/* --- Tablet/iPad Layout (min-width: 720px, matches Image 3) --- */
+@media (min-width: 720px) { /* Tablet breakpoint */
+    header { /* Header styles */
+        padding: 32px; /* Increased padding */
+        flex-wrap: nowrap; /* Prevent wrapping */
+    }
+
+    header h1 { /* Header title */
+        font-size: 3em; /* Larger title */
+        order: 1; /* Maintain order */
+    }
+
+    nav { /* Navigation styles */
+        order: 2; /* Middle position */
+        width: auto; /* Auto width */
+        gap: 32px; /* Increased spacing */
+        font-size: 1em; /* Smaller text */
+        justify-content: flex-start; /* Align left */
+    }
+
+    .search-box { /* Search box */
+        order: 3; /* Right side */
+        flex-grow: 0; /* Reset flex grow */
+        text-align: right; /* Align input right */
+    }
+
+    .search-box input { /* Search input */
+        width: auto; /* Auto width */
+        max-width: 200px; /* Max width for tablet */
+    }
+
+    main { /* Main content */
+        padding: 32px; /* Increased padding */
+        gap: 32px; /* Increased spacing */
+        display: grid; /* Grid layout */
+        grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+        align-items: start; /* Align items to start */
+    }
+
+    .featured-movie { /* Featured movie */
+        grid-column: 1 / -1; /* Span all columns */
+        flex-direction: row; /* Image left, info right */
+        gap: 32px; /* Increased spacing */
+        padding: 32px; /* Increased padding */
+    }
+
+    .featured-movie img { /* Featured movie image */
+        width: 50%; /* Half width image */
+        border-radius: 16px; /* Rounded corners */
+        flex-shrink: 0; /* Prevent shrinking */
+    }
+
+    .featured-info { /* Featured info */
+        flex-direction: column; /* Stack text/button */
+        justify-content: space-between; /* Space items */
+        align-items: flex-start; /* Align items left */
+        gap: 16px; /* Spacing */
+    }
+
+    .watch-btn { /* Watch button */
+        width: auto; /* Auto width */
+        align-self: flex-start; /* Align left */
+    }
+
+    .movie-grid { /* Movie grid */
+        grid-column: 1 / -1; /* Span all columns */
+        grid-template-columns: repeat(2, 1fr); /* Inner 2-column grid */
+        gap: 32px; /* Increased spacing */
+    }
+
+    .movie-card { /* Movie card */
+        padding: 16px; /* Consistent padding */
+        gap: 16px; /* Consistent gap */
+    }
+
+    .movie-horizontal { /* Horizontal movie card */
+        /* Individual grid cells in main grid, 2 columns */
+        flex-direction: column; /* Image top, info bottom */
+        gap: 16px; /* Smaller gap */
+        padding: 16px; /* Smaller padding */
+    }
+
+    .movie-horizontal img { /* Horizontal movie image */
+        width: 100%; /* Full width in grid cell */
+        border-radius: 16px; /* Rounded corners */
+        flex-shrink: 0; /* Prevent shrinking */
+    }
+
+    .movie-horizontal .movie-info { /* Horizontal movie info */
+        gap: 16px; /* Consistent gap */
+        flex-direction: column; /* Stack text/button */
+        justify-content: space-between; /* Space items */
+        align-items: flex-start; /* Align text left */
+    }
+}
+
+
+/* --- Desktop Layout (min-width: 1024px, matches Image 1) --- */
+@media (min-width: 1024px) { /* Desktop breakpoint */
+    header { /* Header styles */
+        padding: 48px; /* Max padding */
+    }
+
+    nav { /* Navigation styles */
+        gap: 48px; /* More breathing room */
+    }
+
+    .search-box input { /* Search input */
+        max-width: 250px; /* Max width for desktop */
+    }
+
+    main { /* Main content */
+        padding: 48px; /* Increased padding */
+        gap: 48px; /* Consistent spacing */
+        display: flex; /* Reset to flex layout */
+        flex-direction: column; /* Stack sections vertically */
+    }
+
+    .featured-movie { /* Featured movie */
+        flex-direction: column; /* Image top, info bottom */
+        gap: 48px; /* Increased spacing */
+        padding: 48px; /* Increased padding */
+    }
+
+    .featured-movie img { /* Featured movie image */
+        width: 100%; /* Full width image */
+    }
+
+    .featured-info { /* Featured info */
+        flex-direction: row; /* Text left, button right */
+        justify-content: space-between; /* Space items */
+        align-items: flex-end; /* Align items bottom */
+        gap: 48px; /* Increased spacing */
+    }
+
+    .watch-btn { /* Watch button */
+        width: auto; /* Auto width */
+        align-self: auto; /* Reset alignment */
+    }
+
+    .movie-grid { /* Movie grid */
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        gap: 48px; /* Increased spacing */
+    }
+
+    .movie-horizontal { /* Horizontal movie card */
+        flex-direction: row; /* Image left, info right */
+        gap: 48px; /* Increased spacing */
+        padding: 48px; /* Increased padding */
+    }
+
+    .movie-horizontal img { /* Horizontal movie image */
+        width: 40%; /* 40% width image */
+    }
+
+    .movie-horizontal .movie-info { /* Horizontal movie info */
+        gap: 48px; /* Consistent spacing */
+        flex-direction: column; /* Text top, button bottom */
+        justify-content: space-between; /* Space items */
+        align-items: flex-start; /* Align text left */
+    }
+}

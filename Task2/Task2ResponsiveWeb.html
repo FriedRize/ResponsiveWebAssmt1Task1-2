@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- Good accessibility practice -->
+<head>
+    <meta charset="UTF-8"> <!-- Standard UTF-8 encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Essential for responsive design -->
+    <title>watch.it</title> <!-- Simple, memorable title -->
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet"> <!-- Two fonts with multiple weights -->
+    <link rel="stylesheet" href="style.css"> <!-- External stylesheet -->
+</head>
+<body>
+    <header> <!-- Semantic header element -->
+        <h1>Watch.it</h1> <!-- Site branding -->
+        <nav> <!-- Semantic nav element -->
+            <a href="#">Action</a> <!-- Placeholder links - need real URLs -->
+            <a href="#">Comedy</a> <!-- Genre-based navigation - good UX for movie site -->
+            <a href="#">Romance</a> <!-- Genre-based navigation - good UX for movie site -->
+            <a href="#">Drama</a> <!-- Genre-based navigation - good UX for movie site -->
+        </nav>
+        <div class="search-box"> <!-- Search functionality -->
+            <input type="text" placeholder="SEARCH"> <!-- Missing label for accessibility, no search button/form -->
+        </div>
+    </header>
+    <main> <!-- Semantic main element -->
+        <div class="featured-movie"> <!-- Hero/featured section -->
+            <img src="roger_rabbit.jpg" alt="Who Framed Roger Rabbit Poster"> <!-- Descriptive alt text -->
+            <div class="featured-info"> <!-- Wrapper for text content -->
+                <div> <!-- Extra wrapper - allows button to be positioned separately -->
+                    <h2 class="movie-title">Who Framed Roger Rabbit (1988)</h2> <!-- Movie title with year -->
+                    <p>In a world where cartoons and humans coexist, a detective must solve a zany, high-stakes mystery. Packed with wild humor, groundbreaking animation, and noir twists, this unique film will pull you into a world where anything is possible!</p> <!-- Engaging movie description -->
+                </div>
+                <a class="watch-btn" href="#">WATCH NOW</a> <!-- CTA button styled as link -->
+            </div>
+        </div>
+
+        <div class="movie-grid"> <!-- Grid layout for movie cards -->
+            <div class="movie-card"> <!-- Individual movie card -->
+                <img src="hook.jpg" alt="Hook Poster"> <!-- Clear alt text -->
+                <h2 class="movie-title">Hook (1991)</h2> <!-- Consistent title styling -->
+                <div class="movie-info">Rediscover Neverland in this thrilling twist on Peter Pan! Robin Williams stars as a grown-up Peter, who must rediscover his inner child to rescue his kids from the clutches of Captain Hook. Adventure, magic, and nostalgia blend in this timeless family classic.</div> <!-- Should be <p> tag, not <div> -->
+                <a class="watch-btn" href="#">WATCH NOW</a> <!-- Consistent CTA -->
+            </div>
+            <div class="movie-card"> <!-- Consistent card structure -->
+                <img src="la-la-land.jpg" alt="La La Land Poster"> <!-- Descriptive alt text for movie poster -->
+                <h2 class="movie-title">La La Land (2016)</h2> <!-- Movie title with year -->
+                <div class="movie-info">Love, dreams, and the magic of LA take center stage in this musical masterpiece. Watch as two starry-eyed artists navigate passion and ambition in a world where every moment feels like a cinematic spectacle!</div> <!-- Should be <p> tag -->
+                <a class="watch-btn" href="#">WATCH NOW</a> <!-- Call to action button -->
+            </div> <!-- Only 2 cards in grid - room for expansion -->
+        </div>
+
+        <div class="movie-horizontal"> <!-- Horizontal/wide layout card -->
+            <img src="hidden_figures.jpg" alt="Hidden Figures Poster"> <!-- Good alt text -->
+            <div class="movie-info"> <!-- Reusing class name from grid cards but different layout -->
+                <div> <!-- Inner wrapper for flex layout -->
+                    <h2 class="movie-title">Hidden Figures (2016)</h2> <!-- Movie title with year -->
+                    <p>Three unsung heroes of NASA's space race take the spotlight in this inspiring true story. Battling discrimination and defying the odds, these brilliant African-American women prove that intelligence, perseverance, and unity can change history and break barriers.</p> <!-- Using proper <p> tag here -->
+                </div>
+                <a class="watch-btn" href="#">WATCH NOW</a> <!-- Call to action button -->
+            </div>
+        </div>
+
+        <div class="movie-horizontal"> <!-- Consistent structure across horizontal cards -->
+            <img src="palm_springs.jpg" alt="Palm Springs Poster"> <!-- Descriptive alt text for movie poster -->
+            <div class="movie-info"> <!-- Information section for the movie -->
+                <div> <!-- Inner wrapper for flex layout -->
+                    <h2 class="movie-title">Palm Springs (2020)</h2> <!-- Movie title with year -->
+                    <p>A never-ending wedding day turns into an unforgettable time-loop romance! Stuck in the same day, two strangers find love, chaos, and meaning in the most unexpected ways.</p> <!-- Shorter description than others -->
+                </div>
+                <a class="watch-btn" href="#">WATCH NOW</a> <!-- Call to action button -->
+            </div>
+        </div>
+
+        <div class="movie-horizontal"> <!-- Another horizontal layout card -->
+            <img src="barbie.jpg" alt="Barbie Poster"> <!-- Descriptive alt text for movie poster -->
+            <div class="movie-info"> <!-- Information section for the movie -->
+                <div> <!-- Inner wrapper for flex layout -->
+                    <h2 class="movie-title">Barbie (2023)</h2> <!-- Movie title with year -->
+                    <p>Step into the dazzling world of Barbie as she embarks on an unexpected journey from her perfect doll life to the real world. Filled with humor, heart, and empowering messages, this vibrant adventure redefines what it means to dream big!</p> <!-- Engaging movie description -->
+                </div>
+                <a class="watch-btn" href="#">WATCH NOW</a> <!-- Call to action button -->
+            </div>
+        </div> <!-- 3 horizontal cards total -->
+    </main> <!-- No footer element -->
+</body>
+</html>

@@ -1,0 +1,188 @@
+:root { /* Defines CSS variables for colors and spacing */
+  --bg-page: #d2b48c; /* Page background color */
+  --bg-content: #f5deb3; /* Content background color */
+  --bg-footer: #654321; /* Footer background color */
+  --primary-heading: black; /* Primary heading color */
+  --spacing-sm: 12px; /* Small spacing unit */
+  --spacing-lg: 20px; /* Large spacing unit */
+  --spacing-tab: 30px; /* Tablet spacing unit */
+  --spacing-desk: 50px; /* Desktop spacing unit */
+}
+
+body { /* Styles for the entire body of the page */
+  margin: 0; /* Removes default body margin */
+  background-color: var(--bg-page); /* Sets background color using a variable */
+  font-family: 'Josefin Sans', sans-serif; /* Sets font family */
+  line-height: 1.6; /* Sets line height for readability */
+  color: black; /* Sets default text color */
+}
+
+header { /* Styles for the header section */
+  display: flex; /* Enables flexbox layout */
+  flex-direction: column; /* Stacks items vertically */
+  align-items: center; /* Centers items horizontally */
+  padding: var(--spacing-sm); /* Adds padding using a variable */
+  background-color: var(--bg-footer); /* Sets background color using a variable */
+  color: white; /* Sets text color to white */
+}
+
+nav { /* Styles for the navigation menu */
+  margin-top: var(--spacing-sm); /* Adds top margin */
+  display: flex; /* Enables flexbox layout */
+  gap: var(--spacing-sm); /* Adds space between nav items */
+  font-size: 1rem; /* Sets font size */
+}
+
+nav a { /* Styles for navigation links */
+  color: white; /* Sets link color to white */
+  text-decoration: none; /* Removes underline from links */
+}
+
+nav a:hover { /* Styles for navigation links on hover */
+  color: var(--primary-heading); /* Changes link color on hover */
+}
+
+.logo { /* Styles for the logo image */
+  width: 80px; /* Sets initial width of the logo */
+}
+
+@media (min-width: 1024px) { /* Media query for screens wider than 1024px */
+  .logo { /* Styles for the logo image on large screens */
+    width: 200px; /* Increases logo width */
+  }
+}
+
+main { /* Styles for the main content area */
+  background-color: var(--bg-content); /* Sets background color using a variable */
+  max-width: 1200px; /* Sets maximum width */
+  margin: auto; /* Centers the main content horizontally */
+  padding: var(--spacing-sm); /* Adds padding */
+}
+
+h1, h2 { /* Styles for H1 and H2 headings */
+  font-family: 'Protest Guerrilla', sans-serif; /* Sets font family for headings */
+  color: var(--primary-heading); /* Sets heading color */
+}
+
+h1 { /* Styles for H1 heading */
+  font-size: 3em; /* Sets font size for H1 */
+}
+
+@media (min-width: 1024px) { /* Media query for screens wider than 1024px */
+  h1 { /* Styles for H1 heading on large screens */
+    font-size: 4.5em; /* Increases H1 font size */
+  }
+  main p:first-of-type { /* Styles for the first paragraph in main content */
+    font-size: 1.25em; /* Increases font size */
+  }
+}
+
+h2 { /* Styles for H2 heading */
+  font-size: 2em; /* Sets font size for H2 */
+  margin-top: var(--spacing-lg); /* Adds top margin */
+  margin-bottom: var(--spacing-sm); /* Adds bottom margin */
+  font-weight: bold; /* Sets font weight to bold */
+}
+
+.grid { /* Styles for a grid layout container */
+  display: grid; /* Enables grid layout */
+  grid-template-columns: 1fr; /* Single column layout by default */
+  gap: var(--spacing-sm); /* Adds space between grid items */
+  align-items: start; /* Aligns grid items to the start */
+}
+
+@media (min-width: 540px) { /* Media query for screens wider than 540px */
+  main { /* Styles for main content on medium screens */
+    padding: var(--spacing-lg); /* Increases padding */
+  }
+  .grid { /* Styles for grid layout on medium screens */
+    gap: var(--spacing-lg); /* Increases gap between grid items */
+  }
+}
+
+@media (min-width: 720px) { /* Media query for screens wider than 720px */
+  main { /* Styles for main content on tablet screens */
+    padding: var(--spacing-tab); /* Increases padding */
+  }
+  .grid { /* Styles for grid layout on tablet screens */
+    grid-template-columns: repeat(3, 1fr); /* Three-column layout */
+    gap: var(--spacing-tab); /* Increases gap between grid items */
+  }
+}
+
+@media (min-width: 1024px) { /* Media query for screens wider than 1024px */
+  main { /* Styles for main content on desktop screens */
+    padding: var(--spacing-desk); /* Increases padding */
+  }
+  .grid { /* Styles for grid layout on desktop screens */
+    gap: var(--spacing-desk); /* Increases gap between grid items */
+  }
+}
+
+.grid article { /* Styles for articles within the grid */
+  display: flex; /* Enables flexbox layout */
+  flex-direction: column; /* Stacks items vertically */
+}
+
+.grid article h2 { /* Styles for H2 headings within grid articles */
+  margin-top: 0; /* Removes top margin */
+  margin-bottom: var(--spacing-sm); /* Adds bottom margin */
+}
+
+.grid article p { /* Styles for paragraphs within grid articles */
+  margin-bottom: var(--spacing-sm); /* Adds bottom margin */
+}
+
+.albums { /* Styles for the albums grid */
+  display: grid; /* Enables grid layout */
+  grid-template-columns: 2fr 1fr 1fr; /* Defines column widths */
+  grid-template-rows: repeat(2, auto); /* Defines row heights */
+  gap: var(--spacing-sm); /* Adds space between grid items */
+}
+
+.albums img { /* Styles for images within albums */
+  width: 100%; /* Makes image fill container width */
+  height: auto; /* Maintains aspect ratio */
+  object-fit: cover; /* Covers the area, cropping if necessary */
+  display: block; /* Removes extra space below image */
+  border: 4px solid var(--bg-footer); /* Adds a border */
+}
+
+.featured-album { /* Styles for the featured album */
+  grid-row: span 2; /* Spans two rows in the grid */
+}
+
+@media (max-width: 720px) { /* Media query for screens narrower than 720px */
+  .albums { /* Styles for albums grid on small screens */
+    grid-template-columns: 1fr 1fr; /* Two-column layout */
+    grid-template-rows: auto; /* Auto row heights */
+  }
+  .featured-album { /* Styles for featured album on small screens */
+    grid-column: span 2; /* Spans two columns */
+    grid-row: auto; /* Auto row height */
+  }
+}
+
+.author { /* Styles for the author section */
+  display: flex; /* Enables flexbox layout */
+  align-items: center; /* Centers items vertically */
+  gap: var(--spacing-sm); /* Adds space between items */
+  margin-top: var(--spacing-sm); /* Adds top margin */
+  background-color: var(--bg-footer); /* Sets background color */
+  color: white; /* Sets text color */
+  padding: var(--spacing-lg); /* Adds padding */
+  border-radius: 8px; /* Adds rounded corners */
+}
+
+.author img { /* Styles for author image */
+  width: 200px; /* Sets image width */
+  border-radius: 50%; /* Makes image circular */
+  border: 3px solid var(--primary-heading); /* Adds a border */
+}
+
+footer { /* Styles for the footer section */
+  background-color: var(--bg-footer); /* Sets background color */
+  color: white; /* Sets text color */
+  text-align: center; /* Centers text horizontally */
+  padding: var(--spacing-sm); /* Adds padding */
+}

@@ -1,141 +1,141 @@
 :root {
-    --dark: #070410;
-    --navy: #231651;
-    --teal: #4dccbd;
-    --yellow: #eef36a;
-    --white: #ffffff;
+    --dark: #070410; /* 🌑 Almost black background */
+    --navy: #231651; /* 💜 Deep purple-navy for cards */
+    --teal: #4dccbd; /* 🎨 Bright teal accent color */
+    --yellow: #eef36a; /* ⚠️ Defined but never used */
+    --white: #ffffff; /* ⬜ White for text */
 }
 
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; /* 👍 Universal box-sizing - good practice */
 }
 
 body {
-    margin: 0;
-    font-family: 'Lato', sans-serif;
+    margin: 0; /* 👍 Removes default margin */
+    font-family: 'Lato', sans-serif; /* 📝 Clean sans-serif for body text */
     background-color: var(--dark);
-    color: var(--white);
+    color: var(--white); /* 🎨 Dark theme with white text */
 }
 
 header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /* 📱 Spreads items across header */
     padding: 16px;
     background-color: var(--navy);
-    flex-wrap: wrap;
-    gap: 16px;
+    flex-wrap: wrap; /* 📱 Allows wrapping on mobile */
+    gap: 16px; /* 👍 Modern gap property */
 }
 
 header h1 {
-    font-family: 'Teko', sans-serif;
+    font-family: 'Teko', sans-serif; /* 🎬 Display font for branding */
     font-size: 2em;
-    margin: 0;
+    margin: 0; /* 👍 Removes default margin */
     color: var(--white);
 }
 
 nav {
     display: flex;
     gap: 16px;
-    order: 3;
-    width: 100%;
-    flex-wrap: wrap;
+    order: 3; /* 💡 Moves nav to third position (below search on mobile) */
+    width: 100%; /* 📱 Full width on mobile */
+    flex-wrap: wrap; /* 📱 Allows nav items to wrap */
 }
 
 nav a {
     color: var(--white);
-    text-decoration: none;
-    font-size: 1.5em;
+    text-decoration: none; /* 👍 Removes underlines */
+    font-size: 1.5em; /* 📱 Large text for mobile touch targets */
 }
 
 nav a:hover {
-    color: var(--teal);
+    color: var(--teal); /* 🎨 Teal hover effect */
 }
 
 .search-box {
-    order: 2;
+    order: 2; /* 💡 Positions search between h1 and nav */
 }
 
 .search-box input {
     padding: 8px 16px;
-    border-radius: 16px;
-    border: none;
+    border-radius: 16px; /* 🎨 Rounded pill shape */
+    border: none; /* 👍 Clean borderless input */
     font-size: 1em;
     background-color: var(--white);
 }
 
 main {
-    max-width: 900px;
-    margin: 0 auto;
+    max-width: 900px; /* 👍 Constrains width for readability */
+    margin: 0 auto; /* 👍 Centers content */
     padding: 16px;
     display: flex;
-    flex-direction: column;
-    gap: 16px;
+    flex-direction: column; /* 📱 Stacks vertically */
+    gap: 16px; /* 👍 Consistent spacing between sections */
 }
 
 .movie-title {
-    font-family: 'Teko', sans-serif;
+    font-family: 'Teko', sans-serif; /* 🎬 Display font for movie titles */
     font-size: 1.5em;
-    color: var(--teal);
-    margin: 0 0 8px 0;
+    color: var(--teal); /* 🎨 Teal for visual hierarchy */
+    margin: 0 0 8px 0; /* 👍 Bottom margin only */
 }
 
 .featured-movie {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* 📱 Stacks image and info vertically */
     gap: 16px;
     background-color: var(--navy);
-    border-radius: 16px;
+    border-radius: 16px; /* 🎨 Rounded corners throughout */
     padding: 16px;
 }
 
 .featured-movie img {
-    width: 100%;
-    border-radius: 16px;
+    width: 100%; /* 📱 Full width on mobile */
+    border-radius: 16px; /* 👍 Matches container radius */
 }
 
 .featured-info {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 16px; /* 👍 Spaces text and button */
 }
 
 .featured-info p {
     font-size: 1em;
-    margin: 0;
-    line-height: 1.5;
+    margin: 0; /* 👍 Removes default margin */
+    line-height: 1.5; /* 👍 Good readability */
 }
 
 .watch-btn {
     background-color: var(--teal);
-    color: var(--dark);
-    font-family: 'Teko', sans-serif;
-    font-size: 2em;
+    color: var(--dark); /* 🎨 High contrast button */
+    font-family: 'Teko', sans-serif; /* 🎬 Display font for CTAs */
+    font-size: 2em; /* 🎯 Big, eye-catching button */
     padding: 16px;
     border-radius: 16px;
     text-align: center;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    font-weight: 700;
+    cursor: pointer; /* 👍 Shows it's clickable */
+    text-decoration: none; /* 👍 Removes link underline */
+    display: inline-block; /* 💡 Allows padding on inline element */
+    transition: background-color 0.3s ease, color 0.3s ease; /* ✨ Smooth hover transition */
+    font-weight: 700; /* 💪 Bold button text */
 }
 
 .watch-btn:hover {
     background-color: var(--dark);
-    color: var(--teal);
+    color: var(--teal); /* 🎨 Inverted colors on hover */
 }
 
 .movie-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* 📱 Single column on mobile */
     gap: 16px;
 }
 
 .movie-card {
     background-color: var(--navy);
     border-radius: 16px;
-    overflow: hidden;
+    overflow: hidden; /* 👍 Clips content to rounded corners */
     display: flex;
     flex-direction: column;
     padding: 16px;
@@ -144,19 +144,19 @@ main {
 
 .movie-card img {
     width: 100%;
-    display: block;
+    display: block; /* 👍 Removes inline spacing */
     border-radius: 16px;
 }
 
 .movie-card .movie-info {
     font-size: 1em;
-    flex: 1;
+    flex: 1; /* 💡 Takes up remaining space */
     line-height: 1.5;
 }
 
 .movie-horizontal {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* 📱 Vertical layout on mobile */
     gap: 16px;
     background-color: var(--navy);
     border-radius: 16px;
@@ -177,75 +177,75 @@ main {
 }
 
 .movie-horizontal .movie-info > div {
-    flex: 1;
+    flex: 1; /* 💡 Pushes button to bottom */
 }
 
 .movie-horizontal .movie-info p {
-    margin: 0;
+    margin: 0; /* 👍 Removes default margin */
 }
 
 /* Tablet: 720px-1024px */
-@media (min-width: 720px) {
+@media (min-width: 720px) { /* 📱 Tablet breakpoint */
     header {
-        padding: 32px;
-        flex-wrap: nowrap;
+        padding: 32px; /* 📱 More padding on larger screens */
+        flex-wrap: nowrap; /* 📱 Prevents wrapping */
     }
 
     header h1 {
-        font-size: 3em;
+        font-size: 3em; /* 📱 Larger branding */
     }
 
     nav {
-        order: 2;
-        width: auto;
+        order: 2; /* 💡 Returns to middle position */
+        width: auto; /* 📱 No longer full width */
         gap: 32px;
-        font-size: 1em;
+        font-size: 1em; /* 📱 Smaller text (more space available) */
     }
 
     .search-box {
-        order: 3;
+        order: 3; /* 💡 Moves to right side */
     }
 
     main {
         padding: 32px;
-        gap: 32px;
+        gap: 32px; /* 📱 Progressive spacing increase */
     }
 
     .featured-movie {
-        flex-direction: row;
+        flex-direction: row; /* 📱 Side-by-side layout */
         gap: 32px;
         padding: 32px;
     }
 
     .featured-movie img {
-        width: 50%;
-        flex-shrink: 0;
+        width: 50%; /* 📱 Half width for side-by-side */
+        flex-shrink: 0; /* 👍 Prevents image from shrinking */
     }
 
     .featured-info {
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-between; /* 💡 Pushes button to bottom */
         gap: 32px;
     }
 
     .movie-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* 📱 2-column grid */
         gap: 32px;
     }
 
     .movie-card {
-        padding: 16px;
+        padding: 16px; /* 💡 Same as mobile - could increase */
         gap: 16px;
     }
 
     .movie-horizontal {
-        flex-direction: row;
+        flex-direction: row; /* 📱 Horizontal layout */
         gap: 32px;
         padding: 32px;
     }
 
     .movie-horizontal img {
-        width: 40%;
+        width: 40%; /* 📱 Less width than featured (40% vs 50%) */
         flex-shrink: 0;
     }
 
@@ -255,18 +255,18 @@ main {
 }
 
 /* Desktop: 1024px and up */
-@media (min-width: 1024px) {
+@media (min-width: 1024px) { /* 💻 Desktop breakpoint */
     header {
-        padding: 48px;
+        padding: 48px; /* 💻 Maximum padding */
     }
 
     nav {
-        gap: 48px;
+        gap: 48px; /* 💻 More breathing room */
     }
 
     main {
         padding: 48px;
-        gap: 48px;
+        gap: 48px; /* 👍 Consistent 48px spacing pattern */
     }
 
     .featured-movie {
@@ -279,7 +279,7 @@ main {
     }
 
     .movie-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* 💡 Stays 2 columns (not 3) */
         gap: 48px;
     }
 
@@ -289,6 +289,6 @@ main {
     }
 
     .movie-horizontal .movie-info {
-        gap: 48px;
+        gap: 48px; /* 👍 All gaps scale proportionally */
     }
 }

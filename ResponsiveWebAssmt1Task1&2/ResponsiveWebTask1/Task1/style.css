@@ -1,0 +1,186 @@
+:root {
+  --bg-page: #d2b48c; /* light brown */
+  --bg-content: #f5deb3; /* lighter brown / wheat */
+  --bg-footer: #654321; /* dark brown */
+  --primary-heading: black; /* royal blue */
+  --spacing-sm: 12px;
+  --spacing-lg: 20px;
+  --spacing-tab: 30px;
+  --spacing-desk: 50px;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-page);
+  font-family: 'Josefin Sans', sans-serif;
+  line-height: 1.6;
+  color: black;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-sm);
+  background-color: var(--bg-footer);
+  color: white;
+}
+
+nav {
+  margin-top: var(--spacing-sm);
+  display: flex;
+  gap: var(--spacing-sm);
+  font-size: 1rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--primary-heading);
+}
+
+.logo {
+  width: 80px;
+}
+
+@media (min-width: 1024px) {
+  .logo {
+    width: 200px;
+  }
+}
+
+main {
+  background-color: var(--bg-content);
+  max-width: 1200px;
+  margin: auto;
+  padding: var(--spacing-sm);
+}
+
+h1, h2 {
+  font-family: 'Protest Guerrilla', sans-serif;
+  color: var(--primary-heading);
+}
+
+h1 {
+  font-size: 3em;
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 4.5em;
+  }
+  main p:first-of-type {
+    font-size: 1.25em;
+  }
+}
+
+h2 {
+  font-size: 2em;
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+  font-weight: bold;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-sm);
+}
+
+@media (min-width: 540px) {
+  main {
+    padding: var(--spacing-lg);
+  }
+  .grid {
+    gap: var(--spacing-lg);
+  }
+}
+
+@media (min-width: 720px) {
+  main {
+    padding: var(--spacing-tab);
+  }
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-tab);
+  }
+}
+
+@media (min-width: 1024px) {
+  main {
+    padding: var(--spacing-desk);
+  }
+  .grid {
+    gap: var(--spacing-desk);
+  }
+}
+
+.grid article {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid article h2 {
+  margin-bottom: var(--spacing-sm);
+}
+
+.grid article p {
+  margin-bottom: var(--spacing-sm);
+}
+
+.albums {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: repeat(2, auto);
+  gap: var(--spacing-sm);
+}
+
+.albums img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border: 4px solid var(--bg-footer);
+}
+
+.featured-album {
+  grid-row: span 2;
+}
+
+@media (max-width: 720px) {
+  .albums {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .featured-album {
+    grid-column: span 2;
+    grid-row: auto;
+  }
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+  background-color: var(--bg-footer);
+  color: white;
+  padding: var(--spacing-lg);
+  border-radius: 8px;
+}
+
+.author img {
+  width: 200px;
+  border-radius: 50%;
+  border: 3px solid var(--primary-heading);
+}
+
+footer {
+  background-color: var(--bg-footer);
+  color: white;
+  text-align: center;
+  padding: var(--spacing-sm);
+}
